@@ -1,0 +1,351 @@
+/* GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(-45deg, #0b0b0f, #12121a, #0f1f2b, #0b0b0f);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+    color: #f1f1f1;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    background: rgba(15,15,20,0.8);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #00f0ff;
+    text-shadow: 0 0 10px #00f0ff;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 35px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ccc;
+    transition: 0.3s ease;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    color: #00f0ff;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 140px 20px;
+    background: radial-gradient(circle at top, #151520, #0b0b0f 70%);
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #aaa;
+    margin-bottom: 40px;
+}
+
+.hero button {
+    padding: 14px 35px;
+    border: none;
+    border-radius: 50px;
+    background: #00f0ff;
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 0 20px #00f0ff;
+}
+
+.hero button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 30px #00f0ff;
+}
+
+/* SECTION SPACING */
+section {
+    padding: 100px 80px;
+}
+
+/* SERVICES */
+#services h2,
+#work h2,
+#about h2,
+#contact h2 {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.service-grid,
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 35px;
+}
+
+.service,
+.work-item {
+    background: #14141c;
+    padding: 35px;
+    border-radius: 15px;
+    transition: 0.4s ease;
+    border: 1px solid transparent;
+}
+
+.service:hover,
+.work-item:hover {
+    transform: translateY(-10px);
+    border: 1px solid #00f0ff;
+    box-shadow: 0 0 25px rgba(0,240,255,0.2);
+}
+
+.work-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* CONTACT FORM */
+form {
+    max-width: 550px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+form input,
+form textarea {
+    margin-bottom: 18px;
+    padding: 14px;
+    border-radius: 8px;
+    border: none;
+    background: #1c1c25;
+    color: #fff;
+}
+
+form textarea {
+    min-height: 120px;
+}
+
+form button {
+    padding: 14px;
+    border-radius: 50px;
+    border: none;
+    background: #00f0ff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+form button:hover {
+    transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    header {
+        padding: 20px 30px;
+        flex-direction: column;
+    }
+
+    section {
+        padding: 80px 30px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+}
+
+/* PARTICLES */
+#particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity: 0.2;
+  animation: move 20s linear infinite;
+}
+
+@keyframes move {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 1000px; }
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* STATS */
+.stats {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.stat h2 {
+  font-size: 40px;
+  color: #00f0ff;
+}
+
+/* SCROLL REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+    top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content img {
+  max-width: 80%;
+  border-radius: 10px;
+}
+
+#close {
+  position: absolute;
+  top: 100px;
+  right: 60px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+/* DARKER MODE */
+body.darker {
+  background: #050509;
+}
+
+/* LOADER */
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #050509;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.loader-text {
+    font-size: 28px;
+    font-weight: 800;
+    color: #00f0ff;
+    letter-spacing: 4px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+/* GLOW BUTTON */
+.glow-btn {
+    padding: 14px 40px;
+    border-radius: 50px;
+    border: none;
+    background: #00f0ff;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 0 15px #00f0ff;
+    transition: 0.3s ease;
+    animation: float 3s ease-in-out infinite;
+}
+
+.glow-btn:hover {
+    box-shadow: 0 0 35px #00f0ff;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+/* CUSTOM CURSOR */
+body {
+    cursor: none;
+}
+
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #00f0ff;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: 0.1s ease;
+    z-index: 3000;
+}
+
+/* PAGE TRANSITION */
+body {
+    animation: fadeInPage 0.8s ease;
+}
+
+@keyframes fadeInPage {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
