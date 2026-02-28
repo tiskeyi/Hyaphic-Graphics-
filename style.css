@@ -340,10 +340,7 @@ body {
     z-index: 3000;
 }
 
-/* PAGE TRANSITION */
-body {
-    animation: fadeInPage 0.8s ease;
-}
+
 
 @keyframes fadeInPage {
     from { opacity: 0; transform: translateY(10px); }
